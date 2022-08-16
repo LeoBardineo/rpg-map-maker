@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style/style.css">
+
+    <!-- Script -->
+    <script src="script.js" defer></script>
+    <title>RPG Map Maker</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="title">
+            <h1>RPG Map Maker</h1>
+            <h2>Inspirado pelo Max</h2>
+        </header>
+        <main class="main-content">
+            <section class="options">
+                <h2>Tamanho do Grid</h2>
+                <div class="input-group">
+                    <input type="number" name="rows" id="rows" required>
+                    <label for="rows">Número de linhas</label>
+                </div>
+                <div class="input-group">
+                    <input type="number" name="columns" id="columns" required>
+                    <label for="columns">Número de colunas</label>
+                </div>
+            </section>
+            <canvas id="canvas"></canvas>
+        </main>
+        <footer class="made-by">
+            <p>Feito por LeoBardo</p>
+            <a href="https://github.com/LeoBardineo" target="_blank"><i class="bi bi-github"></i></a>
+        </footer>
+    </div>
+</body>
+
+</html>
