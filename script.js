@@ -5,29 +5,48 @@ const ctx = canvas.getContext("2d");
 
 inputLinhas.addEventListener("change", () => {
   console.log(inputLinhas.value);
-  draw();
+  // draw();
 });
 
 inputColunas.addEventListener("change", () => {
   console.log(inputLinhas.value);
-  draw();
+  // draw();
 });
 
-obj = [];
+/*
+numWCells = numero de colunas
+numHCells = numero de linhas
+bw        = width do grid
+bh        = height do grid
+p         = padding
+cw        = canvas width
+ch        = canvas height
+(+ 1 para quando o padding for 0 não cortar os lados)
+*/
+const numWCells = 10,
+  numHCells = 10,
+  cellSize = 40,
+  bw = numWCells * cellSize,
+  bh = numHCells * cellSize,
+  p = 10;
+const cw = bw + p * 2 + 1;
+const ch = bh + p * 2 + 1;
+canvas.width = cw;
+canvas.height = ch;
 
-function draw() {
-  if (inputLinhas.value == 0 || inputColunas.value == 0) {
-    console.log("salve");
-    return;
+function init() {
+  for (var x = 0; x <= bw; x += cellSize) {
+    ctx.moveTo(0.5 + x + p, p);
+    ctx.lineTo(0.5 + x + p, bh + p);
   }
-  const espacoColuna = canvas.width / inputColunas.value;
-  const espacoLinha = canvas.height / inputLinhas.value;
-  console.log(espacoColuna, espacoLinha);
-  for (let i = 0; i < canvas.width; i += espacoColuna) {
-    for (let j = 0; j < canvas.height; j += espacoLinha) {
-      ctx.strokeStyle = "#a7a7a7";
-      ctx.strokeRect(i, j, espacoColuna, espacoLinha);
-    }
+
+  for (var x = 0; x <= bh; x += cellSize) {
+    ctx.moveTo(p, 0.5 + x + p);
+    ctx.lineTo(bw + p, 0.5 + x + p);
   }
-  console.log(obj);
+
+  ctx.strokeStyle = "white";
+  ctx.stroke();
 }
+
+init();

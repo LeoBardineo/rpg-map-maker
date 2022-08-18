@@ -117,7 +117,7 @@ a {
   z-index: 1;
   top: 50%;
   left: 12px;
-  transform: translateY(-50%);
+  transform: translateY(-30%);
 
   font-size: 1rem;
   color: var(--placeholder-text);
@@ -145,6 +145,5 @@ input[type="number"] {
 }
 
 canvas {
-  width: 100%;
   background-color: var(--canvas-bg);
 }
